@@ -1,0 +1,72 @@
+\documentclass{muthesis09}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{url}
+\usepackage{notoccite}
+
+% title of thesis -- nouns and stressed words should begin
+\title{Minimizing Data Communication Cost in Grid Computing System}
+
+\author{Ekasit Kijsipongse}
+
+\input{preamble}         
+
+\begin{document}
+
+\maketitle
+
+%\acknowledgements{
+% acknowledgements go here
+% your name will appear automatically at the end
+%}
+\linespacing{1.5}
+\input{acknowledgements}
+
+\linespacing{1.0}
+\input{abstract}
+
+\thaiabstract{
+% body of thai abstract goes here
+% the heading is generated automatically 
+% note that you *cannot* use something like \input{thaiabs} here
+}
+
+\tableofcontents
+\listoftables % you probably don't want this, even if you have some tables 
+\listoffigures
+
+% your thesis goes here!
+\input{intro} % input file (intro.tex) containing first chapter
+
+\input{literature}
+
+\input{column_based}
+
+\input{pipeline}
+
+\input{multiagent}
+
+\input{conclusions}
+
+%\appendix % use this if you just have one appendix
+%\appendices % use this if you have more than one appendix
+
+\appendices
+
+\chapter{First appendix}
+\section*{hidden appendix section}   %  do not show in table of contents
+
+\chapter{Second appendix}
+
+% put appendices here
+
+% file containing refs if you are not using bibtex
+\bibliographystyle{muthesis09}
+
+\bibliography{biblio}
+
+\biography % use this to get the biography at the end of the thesis
+
+\end{document}
