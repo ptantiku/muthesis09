@@ -614,7 +614,8 @@
       \leavevmode \bfseries
       \advance\leftskip\@tempdima
       \hskip -\leftskip
-      #1\nobreak\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+      #1\nobreak\leaders\hbox{$\m@th \mkern \@dotsep mu.\mkern \@dotsep 
+      	mu$}\hfil \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
       \penalty\@highpenalty
     \endgroup
   \fi}
@@ -689,7 +690,8 @@
 
 \renewcommand\section{%
 	\@startsection {section}{1}{\z@}%
-	{-4.7ex \@plus -1ex \@minus -.2ex}% space above heading
+	{-4em \@plus -1ex \@minus -.2ex}% space above heading
+	%{-4.7ex \@plus -1ex \@minus -.2ex}% space above heading
 	{0.9ex \@plus.2ex}% space below heading
 	{\normalfont\large\bfseries}%
 }
@@ -966,9 +968,11 @@
 %
 % Add field names after titles of TOC,LOF,LOT
 %
-\addtocontents{toc}{\protect\contentsline {chapter}{}{\bfseries \hfill Page}}
+\addtocontents{toc}{\protect\vspace*{-5em}} 	%fixed part vspace
+\addtocontents{toc}{\protect\contentsline {part}{}{\bfseries \hfill Page}}
 \addtocontents{lot}{\protect\contentsline {chapter}{Table}{\bfseries \hfill Page}}
 \addtocontents{lof}{\protect\contentsline {chapter}{Figure}{\bfseries \hfill Page}}
+
 \renewcommand*\l@figure{\@dottedtocline{1}{0em}{2.3em}}  % define indent = 0
 \renewcommand*\l@table{\@dottedtocline{1}{0em}{2.3em}}  % define indent = 0
-
+%\renewcommand\@dotsep{10000}  %simple hack to remove all dotted line in TOC
